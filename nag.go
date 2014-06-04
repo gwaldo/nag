@@ -3,12 +3,12 @@
 // nag - a command-line reminder and timer
 
 // Usage:
-// 	$ nag <integer> [ s|m|h ] [ -m <message> ] [ -s,  --silent ]
+// 	$ nag <integer> [ s|m|h ] [ -m <message> ] [ -s,  --quiet ]
 
 // Options:
 // 	time (in [ seconds | minutes | hours ])
 // 	message (optional)
-// 	silent (do not `say` the command)
+// 	quiet (do not `say` the command)
 
 package main
 
@@ -24,8 +24,8 @@ import (
 var seconds	= flag.Int("sec", 0, "Number of seconds to wait before Nagging.")
 var minutes	= flag.Int("min", 0, "Number of minutes to wait before Nagging.")
 var message	= flag.String("msg", "HEY!", "Message to Nag you with.")
-var silent	= flag.Bool("silent", false, "Do not speak the string (Mac Only.)")
-var s		= flag.Bool("s", false, "Do not speak the string (Mac Only.)")
+var quiet	= flag.Bool("quiet", false, "Do not speak the string (Mac Only.)")
+var q		= flag.Bool("q", false, "No auditory output; Do not speak the string (Mac Only.)")
 
 func speak(m *string) {
 	if runtime.GOOS == "darwin" {
@@ -57,7 +57,7 @@ func main() {
 	time.Sleep(time.Duration(*minutes) * time.Minute)
 	fmt.Println()
 	
-	if !*silent && !*s {
+	if !*quiet && !*q {
 		speak(message)
 	}
 	fmt.Println(*message)
