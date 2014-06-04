@@ -1,0 +1,16 @@
+##nag - a command-line timer and reminder
+
+`nag` is a small utility that will take in an amount of time in minutes and/or
+seconds, and an optional message.  When the time elapsed, it will print the
+message to the screen.  If you're running a Mac, and didn't pass the Silent
+flag (-s, --silent), it will use the `say` command to speak your message.
+
+The defaults are:
+
+* Wait time in Minutes: 0
+* Wait time in Seconds: 0
+* Message: "HEY!"
+* Silent: false
+
+If you call `nag` without any parameters, it will wait 0 minutes and 0 seconds,
+and then print "HEY!" to STDOUT.
