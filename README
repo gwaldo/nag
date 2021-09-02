@@ -1,4 +1,4 @@
-## nag - a command-line timer and reminder
+## nag - a command-line timer and reminder-er
 
 `nag` is a small utility that will take in an amount of time in minutes and/or
 seconds, and an optional message.  When the time elapsed, it will print the
@@ -14,3 +14,5 @@ The defaults are:
 
 If you call `nag` without any parameters, it will wait 0 minutes and 0 seconds,
 and then print "HEY!" to STDOUT.
+
+Note: this is a toy that I used to play with golang.  This could be done easily in any shell or scripting language.
